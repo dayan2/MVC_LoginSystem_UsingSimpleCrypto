@@ -1,0 +1,27 @@
+﻿@model Mvc4_Login.Models.User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "User"))
+{
+    <h4>Add a new User:</h4>
+    
+    <p>@Html.LabelFor(e => e.Email)</p>
+    <p>
+        @Html.TextBoxFor(e => e.Email)
+        @Html.ValidationMessageFor(e => e.Email)
+    </p>
+
+    <p>@Html.LabelFor(e => e.Password)</p>
+    <p>
+        @Html.TextBoxFor(e => e.Password)
+        @Html.ValidationMessageFor(e => e.Password)
+    </p>
+    
+    
+    <input type="submit" value="register" />
+}

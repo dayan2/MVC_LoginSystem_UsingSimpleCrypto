@@ -1,0 +1,26 @@
+﻿@model Mvc4_Login.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login","User"))
+{
+    @Html.ValidationSummary()
+    
+    <div>@Html.LabelFor(e => e.Email)</div>
+    <div>
+        @Html.TextBoxFor(e => e.Email)
+        @Html.ValidationMessageFor(e => e.Email)
+    
+    </div>
+
+    <div>@Html.LabelFor(e => e.Password)</div>
+    <div>
+        @Html.TextBoxFor(e => e.Password)
+        @Html.ValidationMessageFor(e => e.Password)
+    </div>
+
+    <input type="submit" value="Login">
+}
